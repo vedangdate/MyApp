@@ -1,0 +1,24 @@
+<div class="ui center aligned large header"> Rows and Columns </div>
+
+<div>
+    <div class="ui center aligned large form segment">
+        <div class="inline field">
+                <label><h3>Rows</h3></label>
+                <input type="text" ng-change="populateGrid()" ng-model="rows" placeholder="Number of rows">
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <label><h3>Columns</h3></label>
+                <input type="text" ng-change="populateGrid()" ng-model="columns" placeholder="Number of columns">
+        </div>
+
+        <br/><br/>
+
+        <div class="ui center aligned grid">
+            <div class="row" ng-repeat="row in ros">
+                    <div class="column" style="font-size: 16px;" ng-repeat="col in cols">
+                        lorem
+                    </div>
+            </div>
+        </div>
+
+    </div>
+</div>

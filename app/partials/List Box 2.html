@@ -1,0 +1,61 @@
+<div>
+    <div class="ui secondary form segment" style="text-align: center;display: flex;">
+
+        <div style="margin-left: auto">
+            <div class="ui large fluid vertical menu" style="height: 565px;">
+                <div class="item">
+                    <div class="ui small icon input">
+                        <input type="text" ng-model="query" placeholder="Filter by...." autofocus>
+                        <i class="inverted teal filter icon"></i>
+                    </div>
+                </div>
+
+                <div btf-dragon="thing in leftItems | filter:query " style="height: 565px;">
+                    <div class="ui vertical menu" style="margin: auto">
+                        <a class="item" ng-click="ToggleSelect(thing, $event)">
+                            {{thing.name}}
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div style="margin: auto 20px auto 20px">
+            <div class="4 fluid ui vertical massive icon buttons">
+                <div class="ui button" ng-click="move(true)">
+                    <i class="play icon"></i>
+                </div>
+                <div class="ui button" ng-click="moveAll(leftItems, rightItems)">
+                    <i class="forward icon"></i>
+                </div>
+                <div class="ui button" ng-click="move(false)">
+                    <i class="horizontal flipped play icon"></i>
+                </div>
+                <div class="ui button" ng-click="moveAll(rightItems, leftItems)">
+                    <i class="horizontal flipped forward icon"></i>
+                </div>
+            </div>
+        </div>
+
+        <div style="margin-right: auto">
+            <div class="ui large fluid vertical menu" style="height: 565px;">
+                <div class="item">
+                    <div class="ui small icon input">
+                        <input type="text" ng-model="query1" placeholder="Filter by...." autofocus>
+                        <i class="inverted teal filter icon"></i>
+                    </div>
+                </div>
+
+                <div btf-dragon="thing in rightItems | filter:query1 " style="height: 565px;">
+                    <div class="ui vertical menu" style="margin: auto">
+                        <a class="item" ng-click="ToggleSelect(thing, $event)">
+                            {{thing.name}}
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+

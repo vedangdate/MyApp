@@ -1,0 +1,32 @@
+<div style="padding-left: 20px;padding-right: 20px">
+    <div class="ui header">
+        <h3 style="text-align: center">Hit Counters</h3>
+        <hr/>
+        <br/><br/>
+        <div class="column" style="padding-left: 851px">
+            <div class="ui vertical buttons">
+                <div class="ui circular button" style="font-size: 16px;" ng-click="upVoteSession(hits)">
+                    <i class="up icon"></i>
+                    UP
+                </div>
+                <br/><br/>
+                <div class="item">
+                    <strong>
+                        Hit Counter : {{hits.hitCounter}}
+                    </strong>
+                </div>
+                <br/>
+                <div class="item">
+                    <strong>
+                        Even Hit Counter : {{hits.hitCounterEven}}
+                    </strong>
+                </div>
+                <br/><br/>
+                <div class="ui circular button" style="font-size: 16px;" ng-click="downVoteSession(hits)">
+                    <i class="down icon"></i>
+                    DOWN
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

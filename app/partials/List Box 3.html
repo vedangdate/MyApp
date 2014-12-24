@@ -1,0 +1,94 @@
+<div class="ui two column divided grid">               //dividing
+
+    <div class="center aligned five wide column">
+        <div class="ui form">
+
+            <div class="fields">
+                <div class="field">
+                    <div class="ui action input" style="margin: auto">
+                        <input type="text" placeholder="Add Item..." ng-model="itemName" ng-model-instant>
+
+                        <div class="ui green button" ng-click="addItem()">Add</div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="ui red button" ng-click="removeSelectedItems()"> Remove</div>
+                </div>
+            </div>
+
+            <div class="center aligned row">
+                <div class="column">
+                    <div class="ui large vertical menu" style="margin: auto">
+
+                        <div class="header item">
+                            Master List
+                        </div>
+
+                        <div class="item" style="margin: auto">
+                            <div class="ui small icon input">
+                                <input type="text" ng-model="query_main" placeholder="Filter by...." autofocus>
+                                <i class="inverted teal filter icon"></i>
+                            </div>
+                        </div>
+
+                        <div btf-dragon="thing in mainList | filter:query_main" drag-to-remove="false" style="height: auto;">
+                            <div class="ui vertical menu" style="margin: auto;height: auto">
+                                <a class="item" ng-class="{active:thing.selected}" ng-click="ToggleSelect(thing)">
+                                    {{thing.name}}
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="center aligned eleven wide column">
+        <div class="ui grid">
+
+            <div class="two column row">
+                <div class="column">
+                    <div class="ui form">
+                        <div class="ui action input" style="margin: auto">
+
+                            <input type="text" placeholder="Add List..." ng-model="ListHeader" ng-model-instant>
+
+                            <div class="ui green submit button" ng-click="addSubList()">Add</div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="four column row">
+                <div class="column" ng-repeat="subList in subLists" style="margin: 20px">
+
+                    <div class="ui vertical menu" style="margin: auto">
+
+                        <div class="header item">
+                            {{subList.head}}
+                            <i class="delete icon link icon" ng-click="removeList(subList)"></i>
+                        </div>
+
+                        <div btf-dragon="thing in subList.subListItems" drag-to-remove="true" style="min-height: 50px;">
+                            <div class="ui vertical menu" style="margin: auto;">
+                                <a class="item" ng-class="{active:thing.selected}"
+                                   ng-click="ToggleSelect(thing)">
+                                    {{thing.name}}
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>

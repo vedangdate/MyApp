@@ -1,0 +1,25 @@
+<div class="ui vertically divided grid">
+    <div class="ui blue inverted segment">
+        <div class="ui stackable center aligned page grid">
+            <div class="column ten wide">
+                <img ng-src="{{selected.url}}" class="ui huge image">
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="row">
+        <ul class="center aligned column">
+            <li class="huge ui circular animated button" ng-repeat="car in cars" ng-click="selectCar(car)">
+                <div class="visible content">
+                    <h5 class="ui header">
+                        {{car.company}}
+                        <div class="sub header">{{car.model}}</div>
+                    </h5>
+                </div>
+                <div class="hidden content">
+                    <img class="ui small image" style="text-align: center;display: inline;" ng-src="{{car.url}}"/>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
